@@ -1,22 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Tip Calculator v1 🧮🧮</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  Bill
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="logo">
+      SPLI<br />
+      TTER
+    </div>
+
+    <div class="calculator">
+      <form class="calculator__form">
+        <div class="calculator__input">
+          <label class="calculator__input-label" for="bill">Bill</label>
+          <img
+            class="calculator__input-icon"
+            src="images/icon-dollar.svg"
+            alt=""
+          />
+          <input id="bill" type="number" placeholder="0" required />
+        </div>
+
+        <div class="calculator__input">
+          <label class="calculator__input-label" for="">Select Tip%</label>
+
+          <div class="calculator__options">
+            <input type="radio" id="tip-5" name="tip" value="5" />
+            <label class="label-tip" for="tip-5">5%</label>
+
+            <input type="radio" id="tip-10" name="tip" value="10" />
+            <label class="label-tip" for="tip-10">10%</label>
+
+            <input type="radio" id="tip-15" name="tip" value="15" />
+            <label class="label-tip" for="tip-15">15%</label>
+
+            <input type="radio" id="tip-25" name="tip" value="25" />
+            <label class="label-tip" for="tip-25">25%</label>
+
+            <input type="radio" id="tip-50" name="tip" value="50" />
+            <label class="label-tip" for="tip-50">50%</label>
+
+            <input
+              type="number"
+              id="tip-custom"
+              name="tip"
+              value=""
+              placeholder="Custom"
+            />
+          </div>
+        </div>
+
+        <div class="calculator__input">
+          <label class="calculator__input-label" for="people"
+            >Number of People</label
+          >
+          <img
+            class="calculator__input-icon"
+            src="images/icon-person.svg"
+            alt=""
+          />
+          <input id="people" type="number" placeholder="0" required />
+        </div>
+      </form>
+
+      <div class="calculator__results">
+        <div class="calculator__result">
+          <div class="info">
+            <p class="info__title">Tip Amount</p>
+            <small class="info__subtitle">/ person</small>
+          </div>
+          <h2 class="info__result" id="result-amount">$0.00</h2>
+        </div>
+        <div class="calculator__result">
+          <div class="info">
+            <p class="info__title">Total</p>
+            <small class="info__subtitle">/ person</small>
+          </div>
+          <h2 class="info__result" id="result-total">$0.00</h2>
+        </div>
+        <div class="button button--reset">RESET</div>
+      </div>
+    </div>
+    <!-- Bill
 
   Select Tip %
   5%
@@ -35,10 +118,7 @@
   / person
 
   Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+   -->
+    <script src="main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,15 @@
+.heading {
+}
+
+input {
+  font-size: 2.4rem;
+}
+
+h1,
+.heading-1 {
+  @include lg {
+  }
+}
+
+p {
+}
