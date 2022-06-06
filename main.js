@@ -1,17 +1,18 @@
 let inputBill = document.querySelector("input#bill");
 let inputPeople = document.querySelector("input#people");
-let inputPeopleCustom = document.querySelector("#tip-custom");
+let inputTipCustom = document.querySelector("#tip-custom");
 let tipOptions = document.querySelectorAll(`input[type="radio"]`);
 let resultAmount = document.querySelector("#result-amount");
 let resultTotal = document.querySelector("#result-total");
+let btnReset = document.querySelector("#button-reset");
 
-let bill;
-let tipPercentage;
-let people;
-let tip;
-let tipPerPerson;
-let total;
-let totalPerPerson;
+let bill = 0;
+let tipPercentage = 0;
+let people = 0;
+let tip = 0;
+let tipPerPerson = 0;
+let total = 0;
+let totalPerPerson = 0;
 
 inputBill.addEventListener("change", () => {
   if (inputBill.value <= 0) {
@@ -31,14 +32,14 @@ inputPeople.addEventListener("change", () => {
   }
 });
 
-inputPeopleCustom.addEventListener("change", () => {
+inputTipCustom.addEventListener("change", () => {
   tipOptions.forEach((element) => {
     element.checked = false;
   });
-  if (inputPeopleCustom.value <= 0) {
+  if (inputTipCustom.value <= 0) {
     alert("Custom tip can't be less than 0, FOOL!!");
   } else {
-    tipPercentage = +inputPeopleCustom.value;
+    tipPercentage = +inputTipCustom.value;
     updateResult();
   }
 });
@@ -48,6 +49,24 @@ tipOptions.forEach((element) => {
     tipPercentage = +element.value;
     updateResult();
   });
+});
+
+function resetCalc() {
+  bill = 0;
+  inputBill.value = 0;
+  tipPercentage = 0;
+  inputTipCustom.value = 0;
+  tipOptions.forEach((element) => {
+    element.checked = false;
+  });
+  pepole = 0;
+  inputPeople.value = 0;
+
+  updateResult();
+}
+
+btnReset.addEventListener("click", () => {
+  resetCalc();
 });
 
 function updateResult() {
